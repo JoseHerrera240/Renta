@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet } from "react-native";
+import { Link } from '@react-navigation/native';
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState("")
@@ -19,6 +20,7 @@ const Login = ({ navigation }) => {
                     mode='outlined'
                     onChangeText={email => setEmail(email)}
                     value={email}
+                    placeholder="Correo"
                 />
 
                 <TextInput
@@ -29,6 +31,7 @@ const Login = ({ navigation }) => {
                     onChangeText={password => setPassword(password)}
                     value={password}
                     secureTextEntry
+                    placeholder="Contraseña"
                 />
 
                 <Button
@@ -47,12 +50,11 @@ const Login = ({ navigation }) => {
                             setErrormess("Noooo")
                         }
                     }}
-                >
-                    Iniciar sesión
-                </Button>
+                    title="Iniciar sesión"
+                />
                 <Text style={{ color: 'red' }}>{errormess}</Text>
             </View>
-            <Text>¿Aún no te has registrado?</Text>
+            <Button>¿Aún no te has registrado?</Button>
         </View>
     )
 }

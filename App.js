@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Login } from './components/Login/index';
 import { Car } from './components/car';
-import {Rent} from './components/Rent'
+import { Rent } from './components/rent';
 
 let users = [
   { email: "hjose@gmail.com", name: "Jose", password: "123" },
@@ -43,11 +43,11 @@ export function HomeTabs() {
       }}
       />
       <Tab.Screen name='Car' component={Car} options={{
-        tabBarIcon: (tabInfo) => (<MaterialIcons name="directions-car" size={22}/>)
+        tabBarIcon: (tabInfo) => (<MaterialIcons name="directions-car" size={22} />)
       }} />
       <Tab.Screen name='Rent' component={Rent} options={{
-        tabBarIcon: (tabInfo) => (<MaterialIcons name="car-rental" size={22}/>)
-      }}/>
+        tabBarIcon: (tabInfo) => (<MaterialIcons name="car-rental" size={22} />)
+      }} />
     </Tab.Navigator>
   );
 }

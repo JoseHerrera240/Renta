@@ -6,10 +6,10 @@ const Car = () => {
         { image: 'https://www.elcarrocolombiano.com/wp-content/uploads/2023/01/20230110-VENTAS-DE-AUTOS-DE-LUJO-2022-PORTADA.jpg', plate: 'phb07f', number: '3012170624', state: false },
         { image: 'https://www.motor.com.co/__export/1648747244353/sites/motor/img/2022/03/31/bugatti-divo_lady_bug-2020-1024-05_1_crop1648747243913.jpeg_1995808257.jpeg', plate: 'phb07o', number: '3012170624', state: true },
         { image: 'https://www.elcarrocolombiano.com/wp-content/uploads/2022/08/20220823-20-CARROS-PREMIUM-DE-LUJO-ALTA-GAMA-MAS-VENDIDOS-EN-COLOMBIA-JULIO-2022-01.jpg', plate: 'phb07u', number: '3012170624', state: false },
-        { image: 'https://www.semana.com/resizer/MozkqOGMLQ1HKmHo3zYfUFSCxRc=/768x432/filters:format(jpg):quality(50)/cloudfront-us-east-1.images.arcpublishing.com/semana/3NXKTSVSNVB4NAYAFYTB4TR2OY.jpg', plate: 'phb07i', number: '3012170624', state: true },
-        { image: 'https://www.semana.com/resizer/MozkqOGMLQ1HKmHo3zYfUFSCxRc=/768x432/filters:format(jpg):quality(50)/cloudfront-us-east-1.images.arcpublishing.com/semana/3NXKTSVSNVB4NAYAFYTB4TR2OY.jpg', plate: 'phb07i', number: '3012170624', state: true },
-        { image: 'https://www.semana.com/resizer/MozkqOGMLQ1HKmHo3zYfUFSCxRc=/768x432/filters:format(jpg):quality(50)/cloudfront-us-east-1.images.arcpublishing.com/semana/3NXKTSVSNVB4NAYAFYTB4TR2OY.jpg', plate: 'phb07i', number: '3012170624', state: true },
-        { image: 'https://www.semana.com/resizer/MozkqOGMLQ1HKmHo3zYfUFSCxRc=/768x432/filters:format(jpg):quality(50)/cloudfront-us-east-1.images.arcpublishing.com/semana/3NXKTSVSNVB4NAYAFYTB4TR2OY.jpg', plate: 'phb07i', number: '3012170624', state: true },
+        { image: 'https://www.semana.com/resizer/MozkqOGMLQ1HKmHo3zYfUFSCxRc=/768x432/filters:format(jpg):quality(50)/cloudfront-us-east-1.images.arcpublishing.com/semana/3NXKTSVSNVB4NAYAFYTB4TR2OY.jpg', plate: 'phb57i', number: '3012170624', state: true },
+        { image: 'https://www.semana.com/resizer/MozkqOGMLQ1HKmHo3zYfUFSCxRc=/768x432/filters:format(jpg):quality(50)/cloudfront-us-east-1.images.arcpublishing.com/semana/3NXKTSVSNVB4NAYAFYTB4TR2OY.jpg', plate: 'phb67i', number: '3012170624', state: true },
+        { image: 'https://www.semana.com/resizer/MozkqOGMLQ1HKmHo3zYfUFSCxRc=/768x432/filters:format(jpg):quality(50)/cloudfront-us-east-1.images.arcpublishing.com/semana/3NXKTSVSNVB4NAYAFYTB4TR2OY.jpg', plate: 'phb77i', number: '3012170624', state: true },
+        { image: 'https://www.semana.com/resizer/MozkqOGMLQ1HKmHo3zYfUFSCxRc=/768x432/filters:format(jpg):quality(50)/cloudfront-us-east-1.images.arcpublishing.com/semana/3NXKTSVSNVB4NAYAFYTB4TR2OY.jpg', plate: 'phb97i', number: '3012170624', state: true },
     ]
 
     return (
