@@ -4,8 +4,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Login } from './components/Login/index';
-import { Car } from './components/car';
-import { Rent } from './components/rent';
+import { Register } from './components/Register';
+import { Rent } from './components/Rent';
+import { Car } from './components/Car';
 
 let users = [
   { email: "hjose@gmail.com", name: "Jose", password: "123" },
@@ -20,7 +21,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='HomeTabs'>
-        <Stack.Screen name='HomeTabs' component={HomeTabs} options={{ title: 'Login' }} />
+        <Stack.Screen name='HomeTabs' component={HomeTabs} options={{ title: 'Login' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
@@ -31,13 +32,13 @@ export function HomeTabs() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: 'red',
-        tabBarInactiveTintColor: 'gray',
-        tabBarActiveBackgroundColor: 'orange',
-        tabBarInactiveBackgroundColor: 'Blue',
+        tabBarActiveTintColor: 'white',
+        tabBarInactiveTintColor: 'black',
+        tabBarActiveBackgroundColor: 'gray',
+        tabBarInactiveBackgroundColor: 'white',
       }}
     >
-      <Tab.Screen name='HomeTabs' component={Login} options={{
+      <Tab.Screen name='Login' component={Login}  options={{
         tabBarIcon: (tabInfo) => (<MaterialIcons name="person" size={22} />),
         tabBarStyle: { display: 'none' }
       }}
@@ -47,6 +48,10 @@ export function HomeTabs() {
       }} />
       <Tab.Screen name='Rent' component={Rent} options={{
         tabBarIcon: (tabInfo) => (<MaterialIcons name="car-rental" size={22} />)
+      }} />
+      <Tab.Screen name='Register' component={Register} options={{
+        tabBarIcon: (tabInfo) => (<MaterialIcons name="car-rental" size={22} />),
+        tabBarStyle: { display: 'none' }
       }} />
     </Tab.Navigator>
   );
@@ -58,5 +63,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+  }
+
 });

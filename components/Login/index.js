@@ -1,16 +1,12 @@
 import { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet } from "react-native";
-import { Link } from '@react-navigation/native';
+import Users from '../../assets/Data/users.json'
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [errormess, setErrormess] = useState("");
 
-    let users = [
-        { email: "jj", name: "Jose", password: "jj" },
-        { email: "luisperalta@gmail.com", name: "peralta", password: "123" },
-    ]
     return (
         <View style={styles.cardLogin}>
             <View style={styles.viewLogin}>
@@ -27,7 +23,6 @@ const Login = ({ navigation }) => {
                     style={styles.textInput}
                     label="contraseña"
                     mode='outlined'
-                    //   right={<TextInput.Icon icon="acount"/>}
                     onChangeText={password => setPassword(password)}
                     value={password}
                     secureTextEntry
@@ -39,9 +34,8 @@ const Login = ({ navigation }) => {
                     icon="login"
                     mode="contained"
                     onPress={() => {
-                        let findUser = users.find(usr => usr.email == email && usr.password == password);
+                        let findUser = Users.find(usr => usr.email == email && usr.password == password);
                         if (findUser != undefined) {
-                            setErrormess("siii")
                             const { name, email } = findUser
                             setEmail('');
                             setPassword('');
@@ -52,9 +46,17 @@ const Login = ({ navigation }) => {
                     }}
                     title="Iniciar sesión"
                 />
+                <Button
+                    style={{ borderRadius: '8px' }}
+                    icon="login"
+                    mode="contained"
+                    title="Registrate"
+                    onPress={() => {
+                        navigation.navigate('Register')
+                    }}
+                />
                 <Text style={{ color: 'red' }}>{errormess}</Text>
             </View>
-            <Button>¿Aún no te has registrado?</Button>
         </View>
     )
 }
@@ -84,7 +86,7 @@ const styles = StyleSheet.create({
     viewLogin: {
         display: 'grid',
         gap: '17px',
-        gridTemplateRows: 'repeat(2,36px) 40px',
+        gridTemplateRows: 'repeat(2,36px) repeat(2, 40px)',
         minWidth: '232px',
     }
 });

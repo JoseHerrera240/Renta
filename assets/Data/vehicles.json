@@ -1,0 +1,8 @@
+[
+    { "rentNumber": "3012170624", "userName": "Joseli to", "plateNumber": "klm562", "rentDate": "04/04/2365", "image": "https://www.elcarrocolombiano.com/wp-content/uploads/2023/01/20230110-VENTAS-DE-AUTOS-DE-LUJO-2022-PORTADA.jpg", "state": true },
+    { "rentNumber": "3012170624", "userName": "Joselito", "plateNumber": "klm561", "rentDate": "04/04/2365", "image": "https://www.motor.com.co/__export/1648747244353/sites/motor/img/2022/03/31/bugatti-divo_lady_bug-2020-1024-05_1_crop1648747243913.jpeg_1995808257.jpeg", "state": false },
+    { "rentNumber": "3012170624", "userName": "Joselito", "plateNumber": "klm563", "rentDate": "04/04/2365", "image": "https://www.elcarrocolombiano.com/wp-content/uploads/2022/08/20220823-20-CARROS-PREMIUM-DE-LUJO-ALTA-GAMA-MAS-VENDIDOS-EN-COLOMBIA-JULIO-2022-01.jpg", "state": true },
+    { "rentNumber": "3012170624", "userName": "Joselito", "plateNumber": "klm564", "rentDate": "04/04/2365", "image": "https://www.elcarrocolombiano.com/wp-content/uploads/2022/08/20220823-20-CARROS-PREMIUM-DE-LUJO-ALTA-GAMA-MAS-VENDIDOS-EN-COLOMBIA-JULIO-2022-01.jpg", "state": true },
+    { "rentNumber": "3012170624", "userName": "Joselito", "plateNumber": "klm565", "rentDate": "04/04/2365", "image": "https://www.elcarrocolombiano.com/wp-content/uploads/2022/08/20220823-20-CARROS-PREMIUM-DE-LUJO-ALTA-GAMA-MAS-VENDIDOS-EN-COLOMBIA-JULIO-2022-01.jpg", "state": false },
+    { "rentNumber": "3012170624", "userName": "Joselito", "plateNumber": "klm566", "rentDate": "04/04/2365", "image": "https://www.elcarrocolombiano.com/wp-content/uploads/2022/08/20220823-20-CARROS-PREMIUM-DE-LUJO-ALTA-GAMA-MAS-VENDIDOS-EN-COLOMBIA-JULIO-2022-01.jpg", "state": true }
+]

@@ -1,22 +1,18 @@
 import { useState } from "react";
-import { Button, TextInput, View, StyleSheet, Text } from "react-native";
+import { Button, TextInput, View, StyleSheet, Text, CheckBox } from "react-native";
+import Vehicles from '../../assets/Data/vehicles.json'
 
-const Rent = () => {
+const Rent = ({ navigation }) => {
     const [cel, setCel] = useState("");
     const [userName, setUserName] = useState("");
     const [plate, setPlate] = useState("");
     const [date, setDate] = useState("");
     const [image, setImage] = useState("");
+    const [avaible, setAvaible] = useState(false);
     const [errorMessage, setErrormessage] = useState("");
-    let rent= [
-        { rentNumber: '3012170624', userName: 'Joselito', plateNumber: 'klm563', rentDate: '04/04/2365', image: '', state: true },
-        { rentNumber: '3012170624', userName: 'Joselito', plateNumber: 'klm563', rentDate: '04/04/2365', image: '', state: true },
-        { rentNumber: '3012170624', userName: 'Joselito', plateNumber: 'klm563', rentDate: '04/04/2365', image: '', state: true },
-        { rentNumber: '3012170624', userName: 'Joselito', plateNumber: 'klm563', rentDate: '04/04/2365', image: '', state: false },
-    ]
 
     const validation = () => {
-        let plateValidation = rent.find(rent => rent.plateNumber === plate);
+        let plateValidation = Vehicles.find(e => e.plateNumber === plate);
         if (plateValidation) {
             setErrormessage("Esa placa ya existe")
         } else if (
@@ -25,22 +21,22 @@ const Rent = () => {
             date !== "" &&
             image !== "" &&
             plate !== ""
-            ) {
-                rent.push({
-                    rentNumber: cel, userName: userName, plateNumber: plate, rentDate: date, image: image
-                })
-                setErrormessage("Doneee")
-                setCel("")
-                setImage("")
-                setDate("")
-                setPlate("")
-                setUserName("")
-                console.log('rent --->',rent)
-            } else {
-                setErrormessage("Ingresa todos los inputs")
-            }
-            
+        ) {
+            Vehicles.push({
+                rentNumber: cel, userName: userName, plateNumber: plate, rentDate: date, image: image, state: avaible
+            })
+            navigation.navigate('Car')
+            setCel("")
+            setImage("")
+            setDate("")
+            setPlate("")
+            setUserName("")
+            setAvaible(false)
+        } else {
+            setErrormessage("Ingresa todos los inputs")
         }
+
+    }
     return (
         <View style={styles.cardLogin}>
             <TextInput
@@ -83,6 +79,14 @@ const Rent = () => {
                 value={image}
                 placeholder="Image"
             />
+            <View style={styles.viewCheckBox}>
+                <Text>Disponiblidad: </Text>
+                <CheckBox
+                    value={avaible}
+                    onValueChange={setAvaible}
+                />
+            </View>
+
             <Text>{errorMessage}</Text>
             <Button
                 title="Registrar"
@@ -123,6 +127,11 @@ const styles = StyleSheet.create({
         gap: '17px',
         gridTemplateRows: 'repeat(2,36px) 40px',
         minWidth: '232px',
+    },
+    viewCheckBox:{
+        display: "flex",
+        flexDirection: "row",
+        margin: "22px",
     }
 });
 
