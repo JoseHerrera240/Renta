@@ -1,11 +1,29 @@
 import { useState } from "react";
 import { Button, TextInput, View, Text, StyleSheet } from "react-native";
+import swal from 'sweetalert';
 import Users from '../../assets/Data/users.json'
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [errormess, setErrormess] = useState("");
+
+    function validate() {
+        if (email == "" && password == "") {
+            swal('¡Error!', 'Ingrese su correo electronico y la contraseña', 'error');
+            return false
+        }else{
+            let findUser = Users.find(usr => usr.email == email && usr.password == password);
+            console.log("findUser -->",findUser)
+            if (findUser != undefined) {
+                const { name, email } = findUser
+                setEmail('');
+                setPassword('');
+                navigation.navigate('Car', { name: name, email: email })
+            } else {
+                swal('¡Error!', 'Esta cuanta no esta registrada o ingresaste mal los datos', 'error');
+            }
+        }
+    }
 
     return (
         <View style={styles.cardLogin}>
@@ -33,17 +51,7 @@ const Login = ({ navigation }) => {
                     style={{ borderRadius: '8px' }}
                     icon="login"
                     mode="contained"
-                    onPress={() => {
-                        let findUser = Users.find(usr => usr.email == email && usr.password == password);
-                        if (findUser != undefined) {
-                            const { name, email } = findUser
-                            setEmail('');
-                            setPassword('');
-                            navigation.navigate('Car', { name: name, email: email })
-                        } else {
-                            setErrormess("Noooo")
-                        }
-                    }}
+                    onPress={validate}
                     title="Iniciar sesión"
                 />
                 <Button
@@ -55,7 +63,6 @@ const Login = ({ navigation }) => {
                         navigation.navigate('Register')
                     }}
                 />
-                <Text style={{ color: 'red' }}>{errormess}</Text>
             </View>
         </View>
     )

@@ -19,7 +19,8 @@
     "react-dom": "^18.2.0",
     "react-native": "0.71.7",
     "react-native-web": "^0.18.12",
-    "sass": "^1.62.1"
+    "sass": "^1.62.1",
+    "sweetalert": "^2.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

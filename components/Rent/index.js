@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Button, TextInput, View, StyleSheet, Text, CheckBox } from "react-native";
 import Vehicles from '../../assets/Data/vehicles.json'
+import swal from 'sweetalert';
+
 
 const Rent = ({ navigation }) => {
     const [cel, setCel] = useState("");
@@ -9,12 +11,11 @@ const Rent = ({ navigation }) => {
     const [date, setDate] = useState("");
     const [image, setImage] = useState("");
     const [avaible, setAvaible] = useState(false);
-    const [errorMessage, setErrormessage] = useState("");
 
     const validation = () => {
         let plateValidation = Vehicles.find(e => e.plateNumber === plate);
         if (plateValidation) {
-            setErrormessage("Esa placa ya existe")
+            swal('¡Error!', 'Esa placa ya existe', 'error');
         } else if (
             cel !== "" &&
             userName !== "" &&
@@ -33,7 +34,7 @@ const Rent = ({ navigation }) => {
             setUserName("")
             setAvaible(false)
         } else {
-            setErrormessage("Ingresa todos los inputs")
+            swal('¡Error!', 'Ingresa todos los inputs', 'error');
         }
 
     }
@@ -87,7 +88,6 @@ const Rent = ({ navigation }) => {
                 />
             </View>
 
-            <Text>{errorMessage}</Text>
             <Button
                 title="Registrar"
                 style={{ borderRadius: '8px' }}

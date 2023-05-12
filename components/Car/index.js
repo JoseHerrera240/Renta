@@ -19,7 +19,7 @@ const Car = () => {
                         <div key={e.plateNumber} style={styles.divCard}>
                             <img src={e.image} width={'100%'} />
                             <div style={styles.textCar}>
-                                <p style={{fontWeight:'bold'}}>Golf GTI</p>
+                                <p style={{fontWeight:'bold'}}>{e.userName}</p>
                                 <p> Placa: <span  style={{fontWeight:'bold'}}>{e.plateNumber}</span></p>
                                 <p>Celular: <span style={{fontWeight:'bold'}}>{e.rentNumber}</span></p>
                                 <p>{e.state === true ? <MaterialIcons name="check" size={22} /> : <MaterialIcons name="not-interested" size={22} />}</p>

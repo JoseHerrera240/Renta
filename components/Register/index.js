@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { Button, TextInput, View, StyleSheet, Text } from "react-native";
 import Users from '../../assets/Data/users.json'
+import swal from 'sweetalert';
+
 
 const Register = ({ navigation }) => {
     const [identefication, setIdentefication] = useState("");
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [errorMessage, setErrormessage] = useState("");
     const [repeatPassword, setRepeatPassword] = useState("");
 
     const validation = () => {
         if (false) {
-            setErrormessage("Esa placa ya existe")
+            swal('¡Error!', 'Esa placa ya existe', 'error');
         } else if (
             identefication !== "" &&
             userName !== "" &&
@@ -28,9 +29,9 @@ const Register = ({ navigation }) => {
             setEmail("")
             setPassword("")
             setRepeatPassword("")
-            navigation.navigate('HomeTabs')
+            navigation.navigate('Login')
         } else {
-            setErrormessage("Ingresa todos los inputs")
+            swal('¡Error!', 'Ingresa todos los inputs', 'error');
         }
 
     }
@@ -77,9 +78,8 @@ const Register = ({ navigation }) => {
                     value={repeatPassword}
                     placeholder="Valida la contraseña"
                 />
-                <Text>{errorMessage}</Text>
                 <Button
-                    title="Enviar"
+                    title="Registrarse"
                     style={{ borderRadius: '8px' }}
                     icon="login"
                     mode="contained"
