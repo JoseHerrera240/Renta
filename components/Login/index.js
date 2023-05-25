@@ -70,7 +70,7 @@ const Login = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        marginTop: 50,
+        marginTop: '210px',
     },
     bigBlue: {
         color: 'blue',
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         borderRadius: '8px',
     },
     cardLogin: {
-        marginTop: '120px',
+        marginTop: '210px',
         display: 'flex',
         alignItems: 'center'
     },

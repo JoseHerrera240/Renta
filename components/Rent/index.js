@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
         margin: '20px'
     },
     cardLogin: {
-        marginTop: '30px',
+        marginTop: '70px',
         display: 'flex',
         alignItems: 'center'
     },

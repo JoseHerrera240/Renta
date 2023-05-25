@@ -20,7 +20,11 @@ const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='HomeTabs'>
+      <Stack.Navigator initialRouteName='HomeTabs'   
+      screenOptions={{
+        headerShown: false,
+      }}
+      >
         <Stack.Screen name='HomeTabs' component={HomeTabs} options={{ title: 'Login' }}/>
       </Stack.Navigator>
     </NavigationContainer>
@@ -50,7 +54,7 @@ export function HomeTabs() {
         tabBarIcon: (tabInfo) => (<MaterialIcons name="car-rental" size={22} />)
       }} />
       <Tab.Screen name='Register' component={Register} options={{
-        tabBarIcon: (tabInfo) => (<MaterialIcons name="car-rental" size={22} />),
+        tabBarIcon: (tabInfo) => (<MaterialIcons name="create" size={22} />),
         tabBarStyle: { display: 'none' }
       }} />
     </Tab.Navigator>
